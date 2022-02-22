@@ -1,5 +1,6 @@
 {
     "name": "nishiiekazuki/github_action_demo",
+    "description": "php unit test",
     "authors": [
         {
             "name": "westhouseK",
