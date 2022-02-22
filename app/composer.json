@@ -1,0 +1,16 @@
+{
+    "name": "nishiiekazuki/github_action_demo",
+    "authors": [
+        {
+            "name": "westhouseK",
+            "email": "nishiiekazuki@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
