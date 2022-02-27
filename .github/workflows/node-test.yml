@@ -1,6 +1,7 @@
 name: Node Test
 
 on:
+  push:
 
 defaults:
   run:
