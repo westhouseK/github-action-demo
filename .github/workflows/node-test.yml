@@ -18,21 +18,14 @@ jobs:
         ports:
           - 27017:27017
     steps:
+    - uses: actions/checkout@v2
     - name: Checkout
-      uses: actions/checkout@v2
 
+    - uses: actions/setup-node@v2
     - name: test
-      uses: actions/setup-node@v2
       with:
           node-version: "14"
       run: |
         npm install
         npm run test
         npm run mongo
-
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      
-
-    - name: test mongo
-      run: npm run mongo 

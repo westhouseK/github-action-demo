@@ -1,6 +1,6 @@
 name: PHP Test
 
-  on: [push]
+on: [push]
 
 defaults:
   run:
