@@ -1,11 +1,11 @@
-name: Test
+name: PHP Test
 
 on: [push]
 
 defaults:
   run:
     shell: bash
-    working-directory: app
+    working-directory: app/php
 
 jobs:
   test:
