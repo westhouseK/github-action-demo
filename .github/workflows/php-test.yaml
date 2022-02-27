@@ -19,10 +19,8 @@ jobs:
           POSTGRES_PASSWORD: root
           POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
           POSTGRES_DB: "root"
-
       mongodb:
         image: mongo:4.4.0
-        restart: always
         ports:
           - 27017:27017
         env:
