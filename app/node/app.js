@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 // Connection URL
-const url = "mongodb://localhost:27017";
+const url = "mongodb://localhost:27017?authSource=admin";
 const client = new MongoClient(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
