@@ -21,5 +21,18 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Run test suite
-      run: npm run test 
+    - name: test
+      uses: actions/setup-node@v2
+      with:
+          node-version: "14"
+      run: |
+        npm install
+        npm run test
+        npm run mongo
+
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      
+
+    - name: test mongo
+      run: npm run mongo 
