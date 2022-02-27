@@ -3,11 +3,6 @@ name: Node Test
 on:
   push:
 
-defaults:
-  run:
-    shell: bash
-    working-directory: app/node
-
 jobs:
   test:
     name: Test
@@ -31,3 +26,4 @@ jobs:
           npm install
           npm run test
           npm run mongo
+        working-directory: app/node
