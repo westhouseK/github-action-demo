@@ -1,6 +1,7 @@
-name: PHP Test
+name: check
 
-on: [push]
+on: 
+  push:
 
 jobs:
   check:
