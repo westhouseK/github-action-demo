@@ -1,0 +1,18 @@
+name: PHP Test
+
+on: [push]
+
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        if: ${{ github.action == 'push'}}
+        run: echo 'hoge'
+      - name: success
+        if: ${{ success() }}
+        run: echo 'success'
+      - name: success
+        if: ${{ failure() }}
+        run: echo 'failure'

@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 // Connection URL
-const url = "mongodb://localhost:27017?authSource=admin";
+const url = "mongodb://localhost:27017";
 const client = new MongoClient(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -21,6 +21,7 @@ async function main() {
     id: 1,
     price: 1280,
   };
+  // TODO: insertができない
   await collection.insertOne(obj);
 
   // use test → db.documents.find()
