@@ -1,6 +1,6 @@
 name: check
 
-on: 
+on:
   push:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: step1
         if: ${{ github.action == 'push'}}
-        run: echo 'hoge'
+        run: echo ${{ github.action }} ${{ github.actor }}
       - name: success
         if: ${{ success() }}
         run: echo 'success'
