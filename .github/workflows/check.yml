@@ -11,9 +11,9 @@ jobs:
       - name: step1
         if: ${{ github.action == 'push'}}
         run: echo ${{ github.action }} ${{ github.actor }}
-      - name: success
-        if: ${{ success() }}
-        run: echo 'success'
-      - name: success
-        if: ${{ failure() }}
-        run: echo 'failure'
+      # - name: success
+      #   if: ${{ success() }}
+      #   run: echo 'success'
+      # - name: success
+      #   if: ${{ failure() }}
+      #   run: echo 'failure'
