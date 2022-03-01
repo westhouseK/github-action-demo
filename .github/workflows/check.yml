@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step1
-        if: ${{ github.action == 'push'}}
         run: echo ${{ github.action }} ${{ github.actor }}
       # - name: success
       #   if: ${{ success() }}
