@@ -1,0 +1,42 @@
+name: PHP Test
+
+on: [push]
+
+defaults:
+  run:
+    shell: bash
+    working-directory: app/php
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: root
+          POSTGRES_PASSWORD: root
+          POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+          POSTGRES_DB: "root"
+      mongodb:
+        image: mongo:4.4.0
+        ports:
+          - 27017:27017
+        env:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: pass
+          MONGO_INITDB_DATABASE: prm_mongo
+          TZ: "Asia/Tokyo"
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Run test suite
+      run: composer run-script test 

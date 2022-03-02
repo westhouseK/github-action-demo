@@ -1,1 +1,2 @@
-app/vendor
+app/php/vendor
+app/node/node_modules
