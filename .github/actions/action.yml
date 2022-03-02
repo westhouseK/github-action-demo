@@ -1,6 +1,6 @@
 name: my-actions
 
-run:
+runs:
   using: "composite"
   steps:
     - name: set up
