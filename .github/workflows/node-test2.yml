@@ -17,8 +17,6 @@ jobs:
           MONGO_INITDB_ROOT_PASSWORD: pass
           MONGO_INITDB_DATABASE: prm_mongo
     steps:
-      - name: ls
-        run: ls -la
       - uses: ./.github/actions
       - name: test
         run: |
