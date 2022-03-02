@@ -1,0 +1,9 @@
+name: my-actions
+
+run:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: set up
+      uses: actions/setup-node@v2
+      with:
+        node-version: "14"
