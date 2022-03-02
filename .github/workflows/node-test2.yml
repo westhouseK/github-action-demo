@@ -19,7 +19,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - uses: './.github/actions/my-action' 
+      - name: ls
+        run: ls
+      - uses: ./.github/actions/my-action
       - name: test
         run: |
           npm install

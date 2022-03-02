@@ -1,6 +1,7 @@
 name: my-actions
 
 run:
+  using: "composite"
   steps:
     - name: set up
       uses: actions/setup-node@v2
