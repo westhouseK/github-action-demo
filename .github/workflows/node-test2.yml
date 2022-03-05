@@ -1,0 +1,27 @@
+name: Node Test2
+
+on:
+  push:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:4.4.0
+        ports:
+          - 27017:27017
+        env:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: pass
+          MONGO_INITDB_DATABASE: prm_mongo
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/node
+      - name: test
+        run: |
+          npm install
+          npm run test
+          npm run mongo
+        working-directory: ./app/node
