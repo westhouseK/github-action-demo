@@ -7,4 +7,5 @@ runs:
       uses: actions/setup-node@v2
       with:
         node-version: '14'
-        cache: 'yarn' # or 'npm'
+        cache: 'npm' # or 'yarn'
+        ache-dependency-path: app/node/package-lock.json
