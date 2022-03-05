@@ -3,8 +3,8 @@ name: my-actions
 runs:
   using: 'composite'
   steps:
-    - uses: actions/checkout@v2
-    - name: set up
+    - name: set up Node.js
       uses: actions/setup-node@v2
       with:
         node-version: '14'
+        cache: 'yarn' # or 'npm'

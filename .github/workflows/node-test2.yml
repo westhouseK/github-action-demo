@@ -17,6 +17,7 @@ jobs:
           MONGO_INITDB_ROOT_PASSWORD: pass
           MONGO_INITDB_DATABASE: prm_mongo
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/actions
       - name: test
         run: |
