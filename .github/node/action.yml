@@ -7,7 +7,7 @@ runs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: ls /*/*/*
+      - run: ls */*
         shell: bash
       - uses: actions/cache@v3
         id: node_modules_cache_id
