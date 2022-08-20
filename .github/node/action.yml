@@ -9,6 +9,10 @@ runs:
           node-version: 14
       - run: ls */*
         shell: bash
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        shell: bash
+        run: echo "::set-output name=dir::$(npm config get cache)"
       - uses: actions/cache@v3
         id: node_modules_cache_id
         env:
