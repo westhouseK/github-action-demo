@@ -12,6 +12,7 @@ jobs:
       - uses: ./.github/node
       - name: jest
         run: |
+          ls -la */*
           cd app/node
-          ls -la
+          ls -la */*
           npm run test
