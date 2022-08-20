@@ -1,4 +1,5 @@
 name: "node"
+description: "node"
 
 runs:
   using: "composite"
@@ -14,5 +15,7 @@ runs:
           path: 'app/node/node_modules'
           key: ${{ env.cache-name }}-${{ hashFiles('app/node/package-lock.json') }}
       - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
+        shell: bash
       - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
+        shell: bash
         run: npm install
