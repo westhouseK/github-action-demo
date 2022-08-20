@@ -20,4 +20,6 @@ runs:
         shell: bash
       - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
         shell: bash
-        run: npm install
+        run: |
+          cd app/node
+          npm install
