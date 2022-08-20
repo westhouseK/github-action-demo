@@ -1,6 +1,9 @@
 name: PHP Test
 
-on: [push]
+on:
+  push:
+    branches:
+      - php
 
 defaults:
   run:
