@@ -12,7 +12,6 @@ jobs:
       - uses: ./.github/node
       - name: jest
         run: |
-          ls -la */*
+          pwd
           cd app/node
-          ls -la */*
           npm run test

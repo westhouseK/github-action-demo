@@ -7,7 +7,7 @@ runs:
     - uses: actions/setup-node@v3
       with:
         node-version: 14
-    - run: ls -la */*
+    - run: pwd
       shell: bash
     - uses: actions/cache@v3
       id: node_modules_cache_id
@@ -20,6 +20,5 @@ runs:
       shell: bash
     - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
       shell: bash
-      run: |
-        cd app/node
-        npm install
+      working-directory: app/node
+      run: npm install
