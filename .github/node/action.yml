@@ -15,7 +15,7 @@ runs:
         cache-name: cache-node-modules
       with:
         path: "app/node/node_modules"
-        key: ${{ env.cache-name }}-${{ hashFiles('app/node/package-lock.json') }}
+        key: ${{ env.cache-name }}-${{ hashFiles('app/node/package-lock.json') }}-1
     - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
       shell: bash
     - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
