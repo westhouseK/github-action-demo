@@ -4,26 +4,22 @@ description: "node"
 runs:
   using: "composite"
   steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 14
-      - run: ls */*
-        shell: bash
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        shell: bash
-        run: echo "::set-output name=dir::$(npm config get cache)"
-      - uses: actions/cache@v3
-        id: node_modules_cache_id
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: 'app/node/node_modules'
-          key: ${{ env.cache-name }}-${{ hashFiles('app/node/package-lock.json') }}
-      - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
-        shell: bash
-      - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
-        shell: bash
-        run: |
-          cd app/node
-          npm install
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 14
+    - run: ls -la */*
+      shell: bash
+    - uses: actions/cache@v3
+      id: node_modules_cache_id
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: "app/node/node_modules"
+        key: ${{ env.cache-name }}-${{ hashFiles('app/node/package-lock.json') }}
+    - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
+      shell: bash
+    - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
+      shell: bash
+      run: |
+        cd app/node
+        npm install
